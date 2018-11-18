@@ -1333,6 +1333,22 @@
 			$("#successMessage").show();
 		}
 	</script>
+
+	<!-- Heroku scumbaggery -->
+	<script>
+		setInterval(function() {
+			$.ajax({
+				url: "https://bcosmin.herokuapp.com",
+				type: "GET",
+				success: function(result) {
+					
+				},
+				error: function(error) {
+					
+				}
+			});
+		}, 300000);
+	</script>
 	
 	<!--
 		Main Scripts
