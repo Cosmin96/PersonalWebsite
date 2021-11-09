@@ -206,7 +206,7 @@
 								</div>
 								<div class="info-list">
 									<ul>
-										<li><strong>Age . . . . .</strong> 22</li>
+										<li><strong>Age . . . . .</strong> <span id="age"></span></li>
 										<li><strong>Residence . . . . .</strong> UK</li>
 										<li><strong>Freelance . . . . .</strong> Available</li>
 										<li><strong>Address . . . . .</strong> London, UK</li>
@@ -380,7 +380,7 @@
 							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
 								<div class="fuct-item">
 									<div class="icon"><span class="ion ion-coffee"></span></div>
-									<div class="name">1,246 Cups of coffee turned into code</div>
+									<div class="name"><span id="coffee"></span> Cups of coffee turned into code</div>
 								</div>
 							</div>
 
@@ -485,11 +485,27 @@
 								</div>
 								<div class="resume-items">
 									<div class="resume-item border-line-h active">
-										<div class="date">Sep 2018 - Present</div>
+										<div class="date">Aug 2020 - 2021</div>
+										<div class="name">Client Engineer</div>
+										<div class="company">Thought Machine</div>
+										<p>
+											Working with proprietary systems to build Smart Contracts and Workflows for clients, helping them build financial products.
+										</p>
+									</div>
+									<div class="resume-item border-line-h active">
+										<div class="date">Jun 2019 - Aug 2020</div>
+										<div class="name">Technical Analyst</div>
+										<div class="company">Bank of America</div>
+										<p>
+											Worked on downstream trading system in the back office using Scala and React
+										</p>
+									</div>
+									<div class="resume-item border-line-h active">
+										<div class="date">Sep 2018 - Jun 2019</div>
 										<div class="name">Software Engineer</div>
 										<div class="company">Genie AI</div>
 										<p>
-											Working with MEAN stack on platform that generates contracts with AI
+											Worked with MEAN stack on platform that generates contracts with AI
 										</p>
 									</div>
 									<div class="resume-item border-line-h active">
@@ -534,6 +550,14 @@
 									<div class="name">Education</div>
 								</div>
 								<div class="resume-items">
+									<div class="resume-item border-line-h active">
+										<div class="date">Aug 2019 - Aug 2021</div>
+										<div class="name">MSc Cybersecurity</div>
+										<div class="company">Georgia Institute of Technology</div>
+										<p>
+											Master's Degree in Cybersecurity at GeorgiaTech Atlanta, USA
+										</p>
+									</div>
 									<div class="resume-item border-line-h active">
 										<div class="date">Sep 2018 - Oct 2018</div>
 										<div class="name">Quantum Computing Summer School</div>
@@ -1348,6 +1372,27 @@
 				}
 			});
 		}, 300000);
+	</script>
+
+	<!-- Age script -->
+	<script>
+		var today = new Date();
+		var birthDate = new Date("1996/11/26");
+		var age = today.getFullYear() - birthDate.getFullYear();
+		var m = today.getMonth() - birthDate.getMonth();
+		if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+			age--;
+		}
+		$("#age").html(age);
+	</script>
+
+	<script>
+		const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+		const firstDate = new Date();
+		const secondDate = new Date("2015/09/01");
+
+		const coffee = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+		$("#coffee").html(coffee);
 	</script>
 	
 	<!--
